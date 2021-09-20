@@ -1,10 +1,16 @@
 import React from 'react'
 import { Button, Input, makeStyles, Typography } from '@material-ui/core'
+import { useHistory } from 'react-router'
 
 
 const SelectRoutes = () => {
 
     const classes = useStyles()
+    const history = useHistory()
+
+    const handleClick = () => {
+        history.push('/list-routes')
+    }
     return (
         <div className={classes.root}>
             <div className={classes.header}>
@@ -29,7 +35,7 @@ const SelectRoutes = () => {
                 </div>
             </div>
             <div className={classes.button}>
-                <Button variant="contained" >Ver rutas</Button>
+                <Button onClick={handleClick} variant="contained" >Ver rutas</Button>
             </div>
         </div>
     );
