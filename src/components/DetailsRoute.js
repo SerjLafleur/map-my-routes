@@ -6,9 +6,6 @@ import { Link } from 'react-router-dom';
 import Map from '../Map'
 const DetailsRoute = () => {
 
-    const star = { lat: 37.4148533, lng: -4.5140462 }
-    const end = { lat: 37.4067561, lng: -4.4199274 }
-
     const classes = useStyles()
     return (
         <div className={classes.root}>

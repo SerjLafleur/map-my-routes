@@ -3,13 +3,14 @@ import { Button, Input, makeStyles, Typography } from '@material-ui/core'
 import { useHistory } from 'react-router'
 
 
-const SelectRoutes = () => {
+const SelectRoutes = ({ setDateIn, setDateOut, dateIn, dateOut }) => {
 
     const classes = useStyles()
     const history = useHistory()
 
     const handleClick = () => {
         history.push('/list-routes')
+
     }
     return (
         <div className={classes.root}>
@@ -23,7 +24,7 @@ const SelectRoutes = () => {
                         color="initial">
                         Seleccionar fecha desde:
                     </Typography>
-                    <Input type='date' />
+                    <Input onChange={(e) => setDateIn(e.target.value)} type='date' />
                 </div>
                 <div className={classes.hasta}>
                     <Typography
@@ -31,11 +32,13 @@ const SelectRoutes = () => {
                         color="initial">
                         Seleccionar fechas hasta:
                     </Typography>
-                    <Input type='date' />
+                    <Input onChange={(e) => setDateOut(e.target.value)} type='date' />
                 </div>
             </div>
             <div className={classes.button}>
-                <Button onClick={handleClick} variant="contained" >Ver rutas</Button>
+                {
+                    dateIn && dateOut ? <Button onClick={handleClick} variant="contained" >Ver rutas</Button> : null
+                }
             </div>
         </div>
     );

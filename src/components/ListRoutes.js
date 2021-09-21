@@ -6,8 +6,11 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 
-const ListRoutes = () => {
+const ListRoutes = ({ dateIn, dateOut }) => {
     const classes = useStyles()
+
+
+    console.log('dateIn ----->', dateIn)
     return (
         <div className={classes.root} >
             <div className={classes.header}>
