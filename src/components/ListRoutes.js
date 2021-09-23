@@ -13,7 +13,10 @@ const ListRoutes = ({ dateIn, dateOut }) => {
     useEffect(() => {
 
         let accounts = [
-            { id: "1", start: "Lucena", end: "Rute", date: "2021-10-10" },
+            { id: "1", start: "Lucena", end: "Rute", date: "2021-09-10" },
+            { id: "4", start: "Sevilla", end: "Cádiz", date: "2021-10-11" },
+            { id: "5", start: "El Rubio", end: "Puente Genil", date: "2021-10-13" },
+            { id: "6", start: "Peñiscola", end: "Lucena", date: "2021-10-20" },
             { id: "2", start: "Zuheros", end: "Málaga", date: "2021-11-09" },
             { id: "3", start: "Cabra", end: "Córdoba", date: "2021-12-16" }
         ];
@@ -40,7 +43,7 @@ const ListRoutes = ({ dateIn, dateOut }) => {
                                 <CardContent>
                                     <Typography className={classes.direction} sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                                         Desde: {item.start}
-                                        <Link style={{ textDecoration: 'none', color: '#000' }} to='/details-route'><VisibilityIcon /></Link>
+                                        <Link style={{ textDecoration: 'none', color: '#000' }} to={`/details-route/${item.id}`}><VisibilityIcon /></Link>
                                     </Typography>
                                     <Typography className={classes.direction} sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                                         Hasta: {item.end}
