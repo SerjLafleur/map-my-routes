@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { makeStyles, Typography } from '@material-ui/core';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
@@ -8,9 +8,21 @@ import CardContent from '@mui/material/CardContent';
 
 const ListRoutes = ({ dateIn, dateOut }) => {
     const classes = useStyles()
+    const [rutas, setRutas] = useState([])
 
+    useEffect(() => {
 
-    console.log('dateIn ----->', dateIn)
+        let accounts = [
+            { id: "1", start: "Lucena", end: "Rute", date: "2021-10-10" },
+            { id: "2", start: "Zuheros", end: "Málaga", date: "2021-11-09" },
+            { id: "3", start: "Cabra", end: "Córdoba", date: "2021-12-16" }
+        ];
+
+        let busca = accounts.filter(n => n.date > dateIn && n.date < dateOut)
+
+        setRutas(busca)
+    }, [dateIn, dateOut])
+
     return (
         <div className={classes.root} >
             <div className={classes.header}>
@@ -21,42 +33,24 @@ const ListRoutes = ({ dateIn, dateOut }) => {
                 <Typography variant="h3" color="initial">Listado de Rutas</Typography>
             </div>
             <div className={classes.card}>
-                <Card style={{ margin: '10px' }} sx={{ minWidth: 300 }}>
-                    <CardContent>
-                        <Typography className={classes.direction} sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                            Desde: Dirección 1
-                            <Link style={{ textDecoration: 'none', color: '#000' }} to='/details-route'><VisibilityIcon /></Link>
-                        </Typography>
-                        <Typography className={classes.direction} sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                            Hasta: Dirección 2
-                            <span>Fecha: 18/10/2019</span>
-                        </Typography>
-                    </CardContent>
-                </Card >
-                <Card style={{ margin: '10px' }} sx={{ minWidth: 300 }}>
-                    <CardContent>
-                        <Typography className={classes.direction} sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                            Desde: Dirección 1
-                            <VisibilityIcon />
-                        </Typography>
-                        <Typography className={classes.direction} sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                            Hasta: Dirección 2
-                            <span>Fecha: 18/10/2019</span>
-                        </Typography>
-                    </CardContent>
-                </Card>
-                <Card style={{ margin: '10px' }} sx={{ minWidth: 300 }}>
-                    <CardContent>
-                        <Typography className={classes.direction} sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                            Desde: Dirección 1
-                            <VisibilityIcon />
-                        </Typography>
-                        <Typography className={classes.direction} sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                            Hasta: Dirección 2
-                            <span>Fecha: 18/10/2019</span>
-                        </Typography>
-                    </CardContent>
-                </Card>
+                {
+                    rutas.map(item => {
+                        return (
+                            <Card key={item.id} style={{ margin: '10px' }} sx={{ minWidth: 300 }}>
+                                <CardContent>
+                                    <Typography className={classes.direction} sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                                        Desde: {item.start}
+                                        <Link style={{ textDecoration: 'none', color: '#000' }} to='/details-route'><VisibilityIcon /></Link>
+                                    </Typography>
+                                    <Typography className={classes.direction} sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                                        Hasta: {item.end}
+                                        <span>Fecha: {item.date}</span>
+                                    </Typography>
+                                </CardContent>
+                            </Card >
+                        )
+                    })
+                }
             </div>
         </div>
     );
