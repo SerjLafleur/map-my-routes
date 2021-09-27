@@ -22,9 +22,10 @@ const ListRoutes = ({ dateIn, dateOut }) => {
         ];
 
         let busca = accounts.filter(n => n.date > dateIn && n.date < dateOut)
-
         setRutas(busca)
     }, [dateIn, dateOut])
+
+
 
     return (
         <div className={classes.root} >

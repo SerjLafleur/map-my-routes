@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles, Typography } from '@material-ui/core';
 import { Card, CardContent } from '@mui/material';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
@@ -7,6 +7,33 @@ import Map from '../Map'
 const DetailsRoute = () => {
 
     const classes = useStyles()
+
+    const [ruta, setRuta] = useState([])
+
+    useEffect(() => {
+        let accounts = [
+            { id: "1", start: "Lucena", end: "Rute", date: "2021-09-10" },
+            { id: "4", start: "Sevilla", end: "Cádiz", date: "2021-10-11" },
+            { id: "5", start: "El Rubio", end: "Puente Genil", date: "2021-10-13" },
+            { id: "6", start: "Peñiscola", end: "Lucena", date: "2021-10-20" },
+            { id: "2", start: "Zuheros", end: "Málaga", date: "2021-11-09" },
+            { id: "3", start: "Cabra", end: "Córdoba", date: "2021-12-16" }
+        ];
+
+        setRuta(accounts)
+    }, [])
+
+    if (ruta.length === 0) return (<div>Cargando...</div>)
+
+    console.log(ruta)
+
+    const data = ruta.filter(elm => elm.id)
+
+    console.log('data', data)
+
+    const routerDetails = data[0]
+
+    console.log('--------------------->>', routerDetails)
     return (
         <div className={classes.root}>
             <div className={classes.header}>
@@ -23,11 +50,11 @@ const DetailsRoute = () => {
                 <Card style={{ margin: '10px' }} sx={{ minWidth: 300 }}>
                     <CardContent>
                         <Typography className={classes.direction} sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                            Desde: Dirección 1
+                            Desde: {routerDetails.start}
                         </Typography>
                         <Typography className={classes.direction} sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                            Hasta: Dirección 2
-                            <span>Fecha: 18/10/2019</span>
+                            Hasta: {routerDetails.end}
+                            <span>Fecha: {routerDetails.date}</span>
                         </Typography>
                     </CardContent>
                 </Card>
