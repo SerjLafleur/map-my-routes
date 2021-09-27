@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { makeStyles, Typography } from '@material-ui/core';
 import { Card, CardContent } from '@mui/material';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Map from '../Map'
 const DetailsRoute = () => {
 
     const classes = useStyles()
+    const { id } = useParams()
+    console.log(id)
 
     const [ruta, setRuta] = useState([])
 
@@ -19,7 +21,6 @@ const DetailsRoute = () => {
             { id: "2", start: "Zuheros", end: "Málaga", date: "2021-11-09" },
             { id: "3", start: "Cabra", end: "Córdoba", date: "2021-12-16" }
         ];
-
         setRuta(accounts)
     }, [])
 
@@ -27,13 +28,6 @@ const DetailsRoute = () => {
 
     console.log(ruta)
 
-    const data = ruta.filter(elm => elm.id)
-
-    console.log('data', data)
-
-    const routerDetails = data[0]
-
-    console.log('--------------------->>', routerDetails)
     return (
         <div className={classes.root}>
             <div className={classes.header}>
@@ -50,11 +44,11 @@ const DetailsRoute = () => {
                 <Card style={{ margin: '10px' }} sx={{ minWidth: 300 }}>
                     <CardContent>
                         <Typography className={classes.direction} sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                            Desde: {routerDetails.start}
+                            Desde: {ruta.start}
                         </Typography>
                         <Typography className={classes.direction} sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                            Hasta: {routerDetails.end}
-                            <span>Fecha: {routerDetails.date}</span>
+                            Hasta: {ruta.end}
+                            <span>Fecha: {ruta.date}</span>
                         </Typography>
                     </CardContent>
                 </Card>
