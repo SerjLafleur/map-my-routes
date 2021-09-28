@@ -13,7 +13,7 @@ const ListRoutes = ({ dateIn, dateOut }) => {
     useEffect(() => {
 
         let accounts = [
-            { id: "1", start: "Lucena", end: "Rute", date: "2021-09-10" },
+            { id: "1", start: "Lucena", end: "Llanos de San Juan", date: "2021-09-10" },
             { id: "4", start: "Sevilla", end: "Cádiz", date: "2021-10-11" },
             { id: "5", start: "El Rubio", end: "Puente Genil", date: "2021-10-13" },
             { id: "6", start: "Peñiscola", end: "Lucena", date: "2021-10-20" },

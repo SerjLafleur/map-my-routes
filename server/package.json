@@ -2,14 +2,17 @@
   "name": "map-my-routes-api",
   "version": "1.0.0",
   "description": "Server that will contain the api",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "dev": "nodemon server.js",
+    "dev": "nodemon app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.26.0",
     "nodemon": "^2.0.13"
   },
   "dependencies": {

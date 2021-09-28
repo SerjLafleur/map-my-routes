@@ -44,11 +44,11 @@ const DetailsRoute = () => {
                 <Card style={{ margin: '10px' }} sx={{ minWidth: 300 }}>
                     <CardContent>
                         <Typography className={classes.direction} sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                            Desde: {ruta.start}
+                            Desde: Lucena
                         </Typography>
                         <Typography className={classes.direction} sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                            Hasta: {ruta.end}
-                            <span>Fecha: {ruta.date}</span>
+                            Hasta: Llanos de San Juan
+                            <span>Fecha: 2021-09-10</span>
                         </Typography>
                     </CardContent>
                 </Card>
