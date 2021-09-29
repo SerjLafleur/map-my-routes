@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios'
 import { makeStyles, Typography } from '@material-ui/core';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -12,20 +13,15 @@ const ListRoutes = ({ dateIn, dateOut }) => {
 
     useEffect(() => {
 
-        let accounts = [
-            { id: "1", start: "Lucena", end: "Llanos de San Juan", date: "2021-09-10" },
-            { id: "4", start: "Sevilla", end: "Cádiz", date: "2021-10-11" },
-            { id: "5", start: "El Rubio", end: "Puente Genil", date: "2021-10-13" },
-            { id: "6", start: "Peñiscola", end: "Lucena", date: "2021-10-20" },
-            { id: "2", start: "Zuheros", end: "Málaga", date: "2021-11-09" },
-            { id: "3", start: "Cabra", end: "Córdoba", date: "2021-12-16" }
-        ];
+        axios
+            .get('http://localhost:4000/api/routes/')
+            .then((res) => {
+                const { data } = res
 
-        let busca = accounts.filter(n => n.date > dateIn && n.date < dateOut)
-        setRutas(busca)
+                let dataFilter = data.filter(n => n.date > dateIn && n.date < dateOut)
+                setRutas(dataFilter)
+            })
     }, [dateIn, dateOut])
-
-
 
     return (
         <div className={classes.root} >

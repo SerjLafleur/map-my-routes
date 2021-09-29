@@ -1,32 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles, Typography } from '@material-ui/core';
-import { Card, CardContent } from '@mui/material';
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import { Link, useParams } from 'react-router-dom';
-import Map from '../Map'
+import { Card, CardContent } from '@mui/material'
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'
+import { Link, useParams } from 'react-router-dom'
+import axios from 'axios'
+import Map from './Map'
 const DetailsRoute = () => {
 
     const classes = useStyles()
     const { id } = useParams()
-    console.log(id)
-
     const [ruta, setRuta] = useState([])
 
     useEffect(() => {
-        let accounts = [
-            { id: "1", start: "Lucena", end: "Rute", date: "2021-09-10" },
-            { id: "4", start: "Sevilla", end: "Cádiz", date: "2021-10-11" },
-            { id: "5", start: "El Rubio", end: "Puente Genil", date: "2021-10-13" },
-            { id: "6", start: "Peñiscola", end: "Lucena", date: "2021-10-20" },
-            { id: "2", start: "Zuheros", end: "Málaga", date: "2021-11-09" },
-            { id: "3", start: "Cabra", end: "Córdoba", date: "2021-12-16" }
-        ];
-        setRuta(accounts)
-    }, [])
+
+        axios
+            .get(`http://localhost:4000/api/routes/${id}`)
+            .then((res) => {
+                setRuta(res.data)
+            })
+    }, [id])
 
     if (ruta.length === 0) return (<div>Cargando...</div>)
 
-    console.log(ruta)
+    const { desde, hasta } = ruta
 
     return (
         <div className={classes.root}>
@@ -38,17 +34,17 @@ const DetailsRoute = () => {
                 <Typography variant="h3" color="initial">Listado de Rutas</Typography>
             </div>
             <div className={classes.map}>
-                <Map />
+                <Map desde={desde} hasta={hasta} />
             </div>
             <div className={classes.card}>
                 <Card style={{ margin: '10px' }} sx={{ minWidth: 300 }}>
                     <CardContent>
                         <Typography className={classes.direction} sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                            Desde: Lucena
+                            Desde: {ruta.start}
                         </Typography>
                         <Typography className={classes.direction} sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                            Hasta: Llanos de San Juan
-                            <span>Fecha: 2021-09-10</span>
+                            Hasta: {ruta.end}
+                            <span>Fecha: {ruta.date}</span>
                         </Typography>
                     </CardContent>
                 </Card>
