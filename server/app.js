@@ -1,10 +1,15 @@
 const express = require('express')
+const connectDB = require('./config/db')
 const cors = require('cors')
 const App = express()
+
+connectDB()
 
 App.use(cors())
 App.use(express.json())
 App.use(express.urlencoded({ extended: false }))
+
+App.use('/api/routes', require('./routes/routes'))
 
 let routes = [
     {
