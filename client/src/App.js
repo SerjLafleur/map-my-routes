@@ -19,7 +19,7 @@ function App() {
           <Route path='/list-routes'>
             <ListRoutes dateIn={dateIn} dateOut={dateOut} />
           </Route>
-          <Route path='/details-route/:id'>
+          <Route path='/details-route/:_id'>
             <DetailsRoute />
           </Route>
         </Switch>

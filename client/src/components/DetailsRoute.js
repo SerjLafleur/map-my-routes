@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import { makeStyles, Typography } from '@material-ui/core';
 import { Card, CardContent } from '@mui/material'
@@ -8,17 +9,28 @@ import Map from './Map'
 const DetailsRoute = () => {
 
     const classes = useStyles()
-    const { id } = useParams()
+    const { _id } = useParams()
     const [ruta, setRuta] = useState([])
 
     useEffect(() => {
+        getRoutesId()
+        // axios
+        //     .get(`http://localhost:4000/api/routes/${id}`)
+        //     .then((res) => {
+        //         setRuta(res.data)
+        //     })
+    }, [])
 
-        axios
-            .get(`http://localhost:4000/api/routes/${id}`)
+    const getRoutesId = async () => {
+
+        await axios
+            .get(`http://localhost:4000/api/routes/${_id}`)
             .then((res) => {
+
                 setRuta(res.data)
             })
-    }, [id])
+
+    }
 
     if (ruta.length === 0) return (<div>Cargando...</div>)
 

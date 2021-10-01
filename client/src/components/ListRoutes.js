@@ -12,16 +12,28 @@ const ListRoutes = ({ dateIn, dateOut }) => {
     const [rutas, setRutas] = useState([])
 
     useEffect(() => {
+        getRoutes()
+        // axios
+        //     .get('http://localhost:4000/api/routes/')
+        //     .then((res) => {
+        //         const { data } = res
 
-        axios
+        //         let dataFilter = data.filter(n => n.date > dateIn && n.date < dateOut)
+        //         setRutas(dataFilter)
+        //     })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+    const getRoutes = async () => {
+        await axios
             .get('http://localhost:4000/api/routes/')
             .then((res) => {
                 const { data } = res
-
+                console.log(res.data)
                 let dataFilter = data.filter(n => n.date > dateIn && n.date < dateOut)
                 setRutas(dataFilter)
             })
-    }, [dateIn, dateOut])
+    }
 
     return (
         <div className={classes.root} >
@@ -36,11 +48,11 @@ const ListRoutes = ({ dateIn, dateOut }) => {
                 {
                     rutas.map(item => {
                         return (
-                            <Card key={item.id} style={{ margin: '10px' }} sx={{ minWidth: 300 }}>
+                            <Card key={item._id} style={{ margin: '10px' }} sx={{ minWidth: 300 }}>
                                 <CardContent>
                                     <Typography className={classes.direction} sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                                         Desde: {item.start}
-                                        <Link style={{ textDecoration: 'none', color: '#000' }} to={`/details-route/${item.id}`}><VisibilityIcon /></Link>
+                                        <Link style={{ textDecoration: 'none', color: '#000' }} to={`/details-route/${item._id}`}><VisibilityIcon /></Link>
                                     </Typography>
                                     <Typography className={classes.direction} sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                                         Hasta: {item.end}
