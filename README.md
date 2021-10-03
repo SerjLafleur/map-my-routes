@@ -4,17 +4,20 @@ El propósito de map-my-routes es poder buscar rutas que previamente se ha imple
 
 ## Estructura del proyecto front React
 
-├── public
-  │   └── routes.png          # Favicon
+├── mock # datos simulados locales
+  ├── public
+  │   └── favicon.ico          # Favicon
   ├── src
-     │ ├── components # Componentes que acoge todas las páginas
-        │ ├── services # Servicios de interfaz en segundo plano
-     │ ├── service # carpeta donde se produce la conexión con la base de datos
-     │ ├── componentes # Componentes comunes de la empresa
-     │ ├── App.js
-     │ ├── App.css
-     │ ├── index.js             
-     │ ├── index.css 
+     │ ├── activos # Recursos estáticos locales
+     │ ├── common # Aplicar configuración común, como información de navegación
+     │ ├── enums # enum
+     │ ├── componentes # Componentes comunes
+     │ ├── widgets # componentes comerciales
+     │ ├── e2e # Caso de prueba de integración
+     │ ├── diseños # Diseño general
+     │ ├── almacena # objetos relacionados con el estado (modelo dva)
+  │   ├── models               # domain object
+     │ ├── rutas # Entrada de página comercial y plantillas comunes
      │ ├── services # Servicios de interfaz en segundo plano
      │ ├── biblioteca de herramientas utils #
      │ ├── g2.js # Configuración de gráficos visuales
