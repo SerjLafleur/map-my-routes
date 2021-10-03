@@ -2,7 +2,8 @@
 
 El propósito de map-my-routes es poder buscar rutas que previamente se ha implementado en la base de datos. Con ella podemos buscar rutas por meses o años y tener una lista con todas las rutas. Así como también podemos mirar cada detalle de la ruta. Tendremos un mapa para ver la ruta para seguir el recorrido.
 
-Una captura de lo que verás: https://map-my-routes.herokuapp.com/
+Una captura de lo que verás:
+https://map-my-routes.herokuapp.com/
 La Url de la base de datos: https://map-my-routes-api.herokuapp.com/api/routes
 
 Si quieres clonar el repo, deberás tener instalado node.js Luego en tu terminal ejecuta: git clone
