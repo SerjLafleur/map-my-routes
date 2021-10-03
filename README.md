@@ -8,16 +8,16 @@ La Url de la base de datos: https://map-my-routes-api.herokuapp.com/api/routes
 Si quieres clonar el repo, deberás tener instalado node.js Luego en tu terminal ejecuta: git clone
 https://github.com/SerjLafleur/map-my-routes.git
 
-##Instalación 🔧
+## Instalación 🔧
 Ahora solo tendrás que ejecutar npm install o yarn install desde tu terminal para istalar las dependencias.
 
-##Construido con 🛠️
+## Construido con 🛠️
 
-React
-React-router
-React-redux
-Redux-thunk
-Axios
+* React
+* React-router
+* Material-ui
+* Styled-component
+* Axios
 
 
 
@@ -75,3 +75,8 @@ El diseño elegido fue el formato Json y con la siguiente diseño. Ej:
  "Hasta": {lat: Number, lng: Number}
 }
 ```
+
+
+## Autores ✒️
+
+* **Sergio Baltanás* - [SerjLaFleur](https://github.com/SerjLaFleur)
