@@ -41,3 +41,18 @@ El propósito de map-my-routes es poder buscar rutas que previamente se ha imple
 │ ├── package-lock.json
 └── package.json
 ```
+
+## Diseño conceptual del modelo e datos
+
+El diseño elegido fue el formato Json y con la siguiente diseño. Ej:
+
+```
+{
+ "id": Number,
+ "start": String,
+ "end": String,
+ "date": Number,
+ "Desde": {lat: Number, lng: Number},
+ "Hasta": {lat: Number, lng: Number}
+}
+```
