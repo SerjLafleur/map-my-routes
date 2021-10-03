@@ -24,7 +24,7 @@ const DetailsRoute = () => {
     const getRoutesId = async () => {
 
         await axios
-            .get(`http://localhost:4000/api/routes/${_id}`)
+            .get(`https://map-my-routes-api.herokuapp.com/api/routes/${_id}`)
             .then((res) => {
 
                 setRuta(res.data)

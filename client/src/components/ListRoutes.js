@@ -26,7 +26,7 @@ const ListRoutes = ({ dateIn, dateOut }) => {
 
     const getRoutes = async () => {
         await axios
-            .get('http://localhost:4000/api/routes/')
+            .get('https://map-my-routes-api.herokuapp.com/api/routes')
             .then((res) => {
                 const { data } = res
                 console.log(res.data)
