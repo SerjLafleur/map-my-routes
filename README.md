@@ -2,7 +2,7 @@
 
 El propósito de map-my-routes es poder buscar rutas que previamente se ha implementado en la base de datos. Con ella podemos buscar rutas por meses o años y tener una lista con todas las rutas. Así como también podemos mirar cada detalle de la ruta. Tendremos un mapa para ver la ruta para seguir el recorrido.
 
-Una captura de lo que verás:
+Url para ver la aplicación:
 https://map-my-routes.herokuapp.com/
 
 La Url de la base de datos: https://map-my-routes-api.herokuapp.com/api/routes
