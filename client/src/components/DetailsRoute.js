@@ -32,7 +32,7 @@ const DetailsRoute = () => {
 
     }
 
-    if (ruta.length === 0) return (<div>Cargando...</div>)
+    if (ruta.length === 0) return (<div className={classes.spinner}></div>)
 
     const { desde, hasta } = ruta
 
@@ -96,6 +96,16 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'space-between',
         marginTop: theme.spacing(2)
     },
+    spinner: {
+        marginLeft: theme.spacing(50),
+        marginTop: theme.spacing(50),
+        border: '4px solid rgba(0, 0, 0, 0.1)',
+        width: '36px',
+        height: '36px',
+        borderRadius: '50%',
+        borderLeftColor: '#09f',
+        animation: 'spin 1s ease infinite'
+    }
 }))
 
 export default DetailsRoute;
