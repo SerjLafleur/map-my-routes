@@ -18,6 +18,10 @@ Ahora solo tendrás que ejecutar npm install o yarn install desde tu terminal pa
 * Material-ui
 * Styled-component
 * Axios
+* Node.js
+* Express.js
+* Mongoose
+* MongoDB
 
 
 
