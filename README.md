@@ -23,5 +23,21 @@ El propósito de map-my-routes es poder buscar rutas que previamente se ha imple
   ├── README.md
   └── package.json
 ```
+## Estructura del proyecto Backend
 
-
+```
+├── congig
+  │   └── db.js 
+├── controllers
+     │ └── routerControllers
+│ ├── models
+     │ └── routes.models
+│ ├── routes
+     │ └── rroutes.js
+│ ├── .env
+│ ├── .eslintrc.js
+│ ├── gitignore
+│ ├── app.js 
+│ ├── package-lock.json
+└── package.json
+```
