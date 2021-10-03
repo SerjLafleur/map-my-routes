@@ -6,9 +6,9 @@ El propósito de map-my-routes es poder buscar rutas que previamente se ha imple
 
 ```
   ├── public
-  │   └── routes.png   # Favicon
+  │   └── routes.png 
   ├── src
-     │ ├── componentes # Componentes comunes
+     │ ├── componentes 
          │ ├── DetailsRoute 
          │ ├── ListRoutes
          │ ├── Map 
