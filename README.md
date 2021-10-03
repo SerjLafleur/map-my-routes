@@ -4,10 +4,13 @@ El propósito de map-my-routes es poder buscar rutas que previamente se ha imple
 
 Una captura de lo que verás:
 https://map-my-routes.herokuapp.com/
+
 La Url de la base de datos: https://map-my-routes-api.herokuapp.com/api/routes
 
-Si quieres clonar el repo, deberás tener instalado node.js Luego en tu terminal ejecuta: git clone
-https://github.com/SerjLafleur/map-my-routes.git
+
+### Pre-requisitos 📋
+Si quieres clonar el repo, deberás tener instalado node.js
+Luego en tu terminal ejecuta: git clone https://github.com/SerjLafleur/map-my-routes.git
 
 ## Instalación 🔧
 Ahora solo tendrás que ejecutar npm install o yarn install desde tu terminal para istalar las dependencias.
@@ -84,4 +87,4 @@ El diseño elegido fue el formato Json y con la siguiente diseño. Ej:
 
 ## Autores ✒️
 
-* **Sergio Baltanás* - [SerjLaFleur](https://github.com/SerjLaFleur)
+* **Sergio Baltanás* - [SerjLafleur](https://github.com/SerjLafleur)
