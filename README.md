@@ -4,6 +4,7 @@ El propósito de map-my-routes es poder buscar rutas que previamente se ha imple
 
 ## Estructura del proyecto front React
 
+```
 ├── mock # datos simulados locales
   ├── public
   │   └── favicon.ico          # Favicon
@@ -29,4 +30,7 @@ El propósito de map-my-routes es poder buscar rutas que previamente se ha imple
      ├── pruebas # herramientas de prueba
   ├── README.md
   └── package.json
+
+```
+
 
