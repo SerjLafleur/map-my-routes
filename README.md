@@ -5,6 +5,8 @@ El propósito de map-my-routes es poder buscar rutas que previamente se ha imple
 Url para ver la aplicación:
 https://map-my-routes.herokuapp.com/
 
+(Nota: No se verá el mapa de Googpe Maps, puesto que la API, la oculté).
+
 -----------> Recomiendo que se elija las fechas entre el 1 de Septiembre del 2021 al 1 de febrero del 2022. <-------------
 
 La Url de la base de datos: https://map-my-routes-api.herokuapp.com/api/routes
